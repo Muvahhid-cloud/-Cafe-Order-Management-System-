@@ -1,19 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
 
-class MainMenuPanel extends JPanel {
+class MainMenuPanel extends BackgroundPanel {
     public MainMenuPanel() {
+        super("C:\\Users\\hp\\Desktop\\cofee\\cofefefefe\\src\\resources\\vecteezy_cup-of-coffee-latte-tree-shape-and-coffee-beans-on-old_28533635.jpeg"); // Set your background image path
         setLayout(new GridBagLayout());
-        setBackground(new Color(240, 240, 240)); // Optional background color
 
         // Header
         JLabel header = new JLabel("Cafe Management System");
-        header.setFont(new Font("Arial", Font.BOLD, 24));
-        header.setForeground(new Color(93, 64, 55));
-        add(header, getConstraints(0, 0, 1, 1, 10));
+        header.setFont(new Font("Serif", Font.BOLD, 30));
+        header.setForeground(new Color(102, 51, 0));
+        add(header, getConstraints(0, 0, 1, 1, 20));
 
         // Buttons
-        JButton addCoffeeButton = createStyledButton("Add Coffee Item");
+        JButton addCoffeeButton = createStyledButton("Add Coffee");
         JButton viewMenuButton = createStyledButton("View Coffee Menu");
         JButton manageOrdersButton = createStyledButton("Manage Orders");
         JButton exitButton = createStyledButton("Exit");
@@ -32,11 +32,20 @@ class MainMenuPanel extends JPanel {
     private JButton createStyledButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.PLAIN, 18));
-        button.setBackground(new Color(93, 64, 55));
+        button.setBackground(new Color(139, 69, 19)); // Coffee-brown
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         button.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                button.setBackground(new Color(160, 82, 45)); // Lighter coffee-brown
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                button.setBackground(new Color(139, 69, 19)); // Original coffee-brown
+            }
+        });
         return button;
     }
 

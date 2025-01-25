@@ -8,7 +8,7 @@ public class CafeManagementSystem {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Cafe Management System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(900, 600);
 
         // Add all panels to the main panel
         mainPanel.add(new MainMenuPanel(), "MainMenu");
@@ -16,7 +16,7 @@ public class CafeManagementSystem {
         mainPanel.add(new ViewMenuPanel(), "ViewMenu");
         mainPanel.add(new ManageOrdersPanel(), "ManageOrders");
 
-        // Set main panel as the content pane
+        // Set the main panel as the content pane
         frame.setContentPane(mainPanel);
         frame.setVisible(true);
     }
