@@ -15,6 +15,10 @@ public class CafeManagementSystem {
         mainPanel.add(new AddCoffeePanel(), "AddCoffee");
         mainPanel.add(new ViewMenuPanel(), "ViewMenu");
         mainPanel.add(new ManageOrdersPanel(), "ManageOrders");
+        mainPanel.add(new DessertsMenuPanel(), "DessertsMenu");
+        mainPanel.add(new DrinksMenuPanel(), "DrinksMenu");
+        mainPanel.add(new DonersMenuPanel(), "DonersMenu");
+
 
         // Set the main panel as the content pane
         frame.setContentPane(mainPanel);
