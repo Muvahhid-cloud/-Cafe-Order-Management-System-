@@ -50,7 +50,7 @@ class AddCoffeePanel extends BackgroundPanel {
         // Back Button
         JButton backButton = new JButton("Back");
         backButton.addActionListener(e -> CafeManagementSystem.switchPanel("MainMenu"));
-        backButton.setFont(new Font("Serif", Font.PLAIN, 18)); // Italic style
+        backButton.setFont(new Font("Serif", Font.PLAIN, 19)); // Italic style
         backButton.setBackground(new Color(139, 69, 19));
         backButton.setForeground(Color.WHITE);
         backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));

@@ -8,12 +8,14 @@ class DonersMenuPanel extends BackgroundPanel {
         super("path/to/doners-background.jpg"); // Set your background image path
         setLayout(new BorderLayout());
 
+        // Header with Italics and Padding
         JLabel header = new JLabel("Doners Menu", JLabel.CENTER);
-        header.setFont(new Font("Serif", Font.BOLD, 30));
+        header.setFont(new Font("Serif", Font.ITALIC | Font.BOLD, 30)); // Italic and bold font style
         header.setForeground(new Color(102, 51, 0));
+        header.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0)); // Add padding around the header
         add(header, BorderLayout.NORTH);
 
-        JPanel donersPanel = new JPanel(new GridLayout(0, 3, 20, 20)); // 3 columns
+        JPanel donersPanel = new JPanel(new GridLayout(0, 3, 20, 20)); // 3 columns with spacing
         donersPanel.setOpaque(false);
 
         // Add doner items with hover effects
@@ -28,8 +30,9 @@ class DonersMenuPanel extends BackgroundPanel {
         scrollPane.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Add padding
         add(scrollPane, BorderLayout.CENTER);
 
+        // Back Button with Italics
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        backButton.setFont(new Font("Serif", Font.PLAIN, 19)); // Italic style
         backButton.setBackground(new Color(139, 69, 19));
         backButton.setForeground(Color.WHITE);
         backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -43,10 +46,7 @@ class DonersMenuPanel extends BackgroundPanel {
         itemPanel.setLayout(new BorderLayout());
         itemPanel.setPreferredSize(new Dimension(330, 330)); // Slightly squared
         itemPanel.setBackground(new Color(255, 248, 220)); // Soft beige background
-        itemPanel.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(102, 51, 0), 2), // Brown border
-                BorderFactory.createEmptyBorder(10, 10, 10, 10) // Inner padding
-        ));
+        itemPanel.setBorder(BorderFactory.createLineBorder(new Color(102, 51, 0), 2)); // Brown border
         itemPanel.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         // Add hover effect
@@ -66,23 +66,24 @@ class DonersMenuPanel extends BackgroundPanel {
 
         // Doner Image
         JLabel imageLabel = new JLabel();
-        imageLabel.setIcon(resizeImageIcon(imagePath, 300, 250));
+        imageLabel.setIcon(resizeImageIcon(imagePath, 450, 400));
         imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         itemPanel.add(imageLabel, BorderLayout.CENTER);
 
         // Coffee Name and Price
         String styledText = String.format(
-                "<html><span style='color:rgb(51,25,0);font-weight:bold;'>%s</span> - <span style='color:rgb(34,139,34);font-weight:bold;'>$%.2f</span></html>",
+                "<html><span style='color:rgb(51,25,0);font-family:Serif;font-style:italic;font-weight:bold;'>%s</span> - <span style='color:rgb(34,139,34);font-weight:bold;'>$%.2f</span></html>",
                 name, price
         );
         JLabel nameLabel = new JLabel(styledText, JLabel.CENTER);
-        nameLabel.setFont(new Font("Arial", Font.BOLD, 16)); // Apply bold font to the entire label
+        nameLabel.setFont(new Font("Serif", Font.ITALIC | Font.BOLD, 19)); // Italic and bold font for coffee name
+        nameLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(160, 82, 45))); // Bottom border under the title
         itemPanel.add(nameLabel, BorderLayout.NORTH);
 
 
-        // Add to Orders Button
+        // Add to Orders Button with Italics
         JButton addButton = new JButton("Add to Orders");
-        addButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        addButton.setFont(new Font("Serif", Font.ITALIC, 17)); // Italic button text
         addButton.setBackground(new Color(139, 69, 19)); // Coffee-brown
         addButton.setForeground(Color.WHITE);
         addButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
