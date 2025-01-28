@@ -30,3 +30,4 @@ public class CafeManagementSystem {
         cardLayout.show(mainPanel, panelName);
     }
 }
+// Зайниддин мы тут исправим,удали.
